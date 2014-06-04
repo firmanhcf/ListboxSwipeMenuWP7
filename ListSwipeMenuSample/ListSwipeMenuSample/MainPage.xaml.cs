@@ -66,6 +66,10 @@ namespace ListSwipeMenuSample
 
         private void GestureListener_Hold(object sender, Microsoft.Phone.Controls.GestureEventArgs e)
         {
+            _selecteditem = pagelist.SelectedItem as Page;
+
+            Debug.WriteLine(""+_selecteditem.Title);
+
             if (_sendertemp != null)
             {
                 FrameworkElement fe = _sendertemp as FrameworkElement;
@@ -81,6 +85,8 @@ namespace ListSwipeMenuSample
         {
             _selecteditem = pagelist.SelectedItem as Page;
 
+            Debug.WriteLine("" + _selecteditem.Title);
+
             if(_sendertemp!= null)
             {
                 FrameworkElement fe = _sendertemp as FrameworkElement;
@@ -92,17 +98,21 @@ namespace ListSwipeMenuSample
 
         private void Button1Tapped(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            if (_selecteditem != null)
+            var selecteditem = pagelist.SelectedItem as Page;
+            
+            if (selecteditem != null)
             {
-                MessageBox.Show("Button 1 of " + _selecteditem.Title + " Tapped...");
+                MessageBox.Show("Button 1 of " + selecteditem.Title + " Tapped...");
             }
         }
 
         private void Button2Tapped(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            if (_selecteditem != null)
+            var selecteditem = pagelist.SelectedItem as Page;
+
+            if (selecteditem != null)
             {
-                MessageBox.Show("Button 2 of " + _selecteditem.Title + " Tapped...");
+                MessageBox.Show("Button 2 of " + selecteditem.Title + " Tapped...");
             }
         }
 
