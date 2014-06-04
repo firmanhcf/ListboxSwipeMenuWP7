@@ -16,8 +16,6 @@ namespace ListSwipeMenuSample
 {
     public partial class MainPage : PhoneApplicationPage
     {
-        private Canvas _tickAndCrossContainer;
-        private double FlickVelocity = 2000.0;
         private List<Page> _pages;
         private object _sendertemp;
 
@@ -68,8 +66,6 @@ namespace ListSwipeMenuSample
         {
             _selecteditem = pagelist.SelectedItem as Page;
 
-            Debug.WriteLine(""+_selecteditem.Title);
-
             if (_sendertemp != null)
             {
                 FrameworkElement fe = _sendertemp as FrameworkElement;
@@ -84,8 +80,6 @@ namespace ListSwipeMenuSample
         private void GestureListener_DragStarted(object sender, DragStartedGestureEventArgs e)
         {
             _selecteditem = pagelist.SelectedItem as Page;
-
-            Debug.WriteLine("" + _selecteditem.Title);
 
             if(_sendertemp!= null)
             {
